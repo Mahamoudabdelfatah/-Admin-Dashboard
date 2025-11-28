@@ -2,11 +2,13 @@ import Bar from '../../Components/Bar/Bar'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-const Layout = () => {
+const Layout = ({ setMode }) => {
     return (
         <div>
-            <Bar />
-            <Outlet />
+            <Bar setMode={setMode} />
+            <div className="px-22">
+                <Outlet />
+            </div>
         </div>
     )
 }

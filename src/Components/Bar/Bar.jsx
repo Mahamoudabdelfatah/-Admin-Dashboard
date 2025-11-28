@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled} from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
@@ -27,7 +27,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 
 
-export default function Bar() {
+export default function Bar({ setMode }) {
     const [open, setOpen] = React.useState(false);
 
     const handleDrawerOpen = () => {
@@ -42,17 +42,17 @@ export default function Bar() {
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
 
-            <TopBar open={open} handleDrawerOpen={handleDrawerOpen} />
+            <TopBar open={open} handleDrawerOpen={handleDrawerOpen} setMode={setMode} />
 
 
             <SideBar open={open} handleDrawerClose={handleDrawerClose} />
-            
+
 
 
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
                 <Typography sx={{ marginBottom: 2 }}>
-                    Lorem ipsum dolor sit amet,
+                    Mahmoud Abd Elfattah Mahmoud
                 </Typography>
 
             </Box>
