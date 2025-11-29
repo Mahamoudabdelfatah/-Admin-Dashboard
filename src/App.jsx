@@ -5,6 +5,18 @@ import Home from "./Pages/Home/Home"
 import Notfound from "./Pages/Notfound/Notfound"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { getDesignTokens } from "./theme"
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Team from "./Pages/Team/Team";
+import Contacts from "./Pages/Contacts/Contacts";
+import Invoices from "./Pages/Invoices/Invoices";
+import Form from "./Pages/Form/Form";
+import Calendar from "./Pages/Calendar/Calendar";
+import FAQ from "./Pages/FAQ/FAQ";
+import Bar from "./Pages/Bar/Bar";
+import Pie from "./Pages/Pie/Pie";
+import Line from "./Pages/Line/Line";
+import Geography from "./Pages/Geography/Geography";
+
 
 
 
@@ -20,7 +32,18 @@ function App() {
   let routes = createBrowserRouter([
     {
       path: "/", element: <Layout setMode={setMode} />, children: [
-        { index: true, element: <Home /> },
+        // { index: true, element: <Home /> },
+        {index:true , element :<Dashboard />},
+        {path : "team" , element :<Team />},
+        {path : "contacts" , element :<Contacts />},
+        {path : "invoices" , element :<Invoices />},
+        {path : "form" , element :<Form />},
+        {path : "calendar" , element :<Calendar />},
+        {path : "faq" , element :<FAQ />},
+        {path : "bar" , element :<Bar />},
+        {path : "pie" , element :<Pie />},
+        {path : "line" , element :<Line />},
+        {path : "geography" , element :<Geography />},
         { path: "*", element: <Notfound /> }
       ]
     }
