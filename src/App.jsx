@@ -16,6 +16,7 @@ import Bar from "./Pages/Bar/Bar";
 import Pie from "./Pages/Pie/Pie";
 import Line from "./Pages/Line/Line";
 import Geography from "./Pages/Geography/Geography";
+// import BarApp from "./Components/BarApp/BarApp";
 
 
 
@@ -33,17 +34,17 @@ function App() {
     {
       path: "/", element: <Layout setMode={setMode} />, children: [
         // { index: true, element: <Home /> },
-        {index:true , element :<Dashboard />},
-        {path : "team" , element :<Team />},
-        {path : "contacts" , element :<Contacts />},
-        {path : "invoices" , element :<Invoices />},
-        {path : "form" , element :<Form />},
-        {path : "calendar" , element :<Calendar />},
-        {path : "faq" , element :<FAQ />},
-        {path : "bar" , element :<Bar />},
-        {path : "pie" , element :<Pie />},
-        {path : "line" , element :<Line />},
-        {path : "geography" , element :<Geography />},
+        { index: true, element: <Dashboard /> },
+        { path: "team", element: <Team /> },
+        { path: "contacts", element: <Contacts /> },
+        { path: "invoices", element: <Invoices /> },
+        { path: "form", element: <Form /> },
+        { path: "calendar", element: <Calendar /> },
+        { path: "faq", element: <FAQ /> },
+        { path: "bar", element: <Bar /> },
+        { path: "pie", element: <Pie /> },
+        { path: "line", element: <Line /> },
+        { path: "geography", element: <Geography /> },
         { path: "*", element: <Notfound /> }
       ]
     }

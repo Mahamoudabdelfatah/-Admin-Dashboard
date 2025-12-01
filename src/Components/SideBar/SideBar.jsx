@@ -23,8 +23,10 @@ import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
 import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Avatar, Typography } from '@mui/material';
+import { grey } from '@mui/material/colors';
+
 
 const drawerWidth = 240;
 const openedMixin = (theme) => ({
@@ -104,6 +106,7 @@ const Array3 = [
 
 const SideBar = ({ open, handleDrawerClose }) => {
   const theme = useTheme();
+  const location = useLocation()
 
   return (
     <>
@@ -137,6 +140,7 @@ const SideBar = ({ open, handleDrawerClose }) => {
                   {
                     minHeight: 48,
                     px: 2.5,
+                    bgcolor: location.pathname === item.path ? theme.palette.mode === "dark" ? grey[500] : grey[300] : null
                   },
                   open
                     ? {
@@ -197,6 +201,7 @@ const SideBar = ({ open, handleDrawerClose }) => {
                   {
                     minHeight: 48,
                     px: 2.5,
+                    bgcolor: location.pathname === item.path ? "gray" : null
                   },
                   open
                     ? {
@@ -253,6 +258,7 @@ const SideBar = ({ open, handleDrawerClose }) => {
                   {
                     minHeight: 48,
                     px: 2.5,
+                    bgcolor: location.pathname === item.path ? "gray" : null
                   },
                   open
                     ? {
