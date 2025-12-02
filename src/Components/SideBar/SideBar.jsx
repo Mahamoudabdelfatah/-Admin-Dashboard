@@ -201,7 +201,7 @@ const SideBar = ({ open, handleDrawerClose }) => {
                   {
                     minHeight: 48,
                     px: 2.5,
-                    bgcolor: location.pathname === item.path ? "gray" : null
+                    bgcolor: location.pathname === item.path ? theme.palette.mode === "dark" ? grey[500] : grey[300] : null
                   },
                   open
                     ? {
@@ -258,7 +258,7 @@ const SideBar = ({ open, handleDrawerClose }) => {
                   {
                     minHeight: 48,
                     px: 2.5,
-                    bgcolor: location.pathname === item.path ? "gray" : null
+                    bgcolor: location.pathname === item.path ? theme.palette.mode === "dark" ? grey[500] : grey[300] : null
                   },
                   open
                     ? {

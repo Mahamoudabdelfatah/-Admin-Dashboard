@@ -4,7 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { formatDate } from "@fullcalendar/core";
-import { Stack } from "@mui/material";
+import { Paper, Stack } from "@mui/material";
 import { INITIAL_EVENTS, createEventId } from "./event-utils";
 
 const Calendar = () => {
@@ -51,40 +51,11 @@ const Calendar = () => {
   return (
     <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
       {/* Sidebar */}
-      <div className="demo-app-sidebar" style={{ minWidth: 250 }}>
-        <div className="demo-app-sidebar-section">
-          <h2>Instructions</h2>
-          <ul>
-            <li>Select dates and you will be prompted to create a new event</li>
-            <li>Drag, drop, and resize events</li>
-            <li>Click an event to delete it</li>
-          </ul>
-        </div>
-        <div className="demo-app-sidebar-section">
-          <label>
-            <input
-              type="checkbox"
-              checked={weekendsVisible}
-              onChange={handleWeekendsToggle}
-            />
-            Toggle weekends
-          </label>
-        </div>
-        <div className="demo-app-sidebar-section">
-          <h2>All Events ({currentEvents.length})</h2>
-          <ul>
-            {currentEvents.map((event) => (
-              <li key={event.id}>
-                <b>{formatDate(event.start, { year: "numeric", month: "short", day: "numeric" })}</b>
-                <i>{event.title}</i>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+
 
       {/* Calendar */}
       <div className="demo-app-main" style={{ flex: 1 }}>
+
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           headerToolbar={{
@@ -105,7 +76,35 @@ const Calendar = () => {
           eventsSet={handleEvents}
         />
       </div>
+      <Paper>
+        <div className="demo-app-sidebar" style={{ minWidth: 250 }}>
+
+
+          <div className="demo-app-sidebar-section">
+            <label>
+              <input
+                type="checkbox"
+                checked={weekendsVisible}
+                onChange={handleWeekendsToggle}
+              />
+              Toggle weekends
+            </label>
+          </div>
+          <div className="demo-app-sidebar-section">
+            <h2>All Events ({currentEvents.length})</h2>
+            <ul>
+              {currentEvents.map((event) => (
+                <li key={event.id}>
+                  <b>{formatDate(event.start, { year: "numeric", month: "short", day: "numeric" })}</b>
+                  <i>{event.title}</i>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Paper>
     </Stack>
+
   );
 };
 
