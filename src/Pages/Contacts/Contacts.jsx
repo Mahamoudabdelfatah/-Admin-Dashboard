@@ -6,13 +6,12 @@ import { Box, Typography } from "@mui/material";
 
 const Contacts = () => {
 
-  const theme = useTheme()
 
 
 
   return (
     <>
-      <Box sx={{ width: "95%", maxWidth: 1200, mx: "auto", mt: 3 }}>
+      <Box sx={{ width: "650", maxWidth: 1200, mx: "auto", mt: 3 }}>
         <DataGrid
           rows={rows}
           columns={columns}
