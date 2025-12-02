@@ -1,5 +1,4 @@
 import { DataGrid } from '@mui/x-data-grid'
-import React from 'react'
 import { rows } from './data'
 import { useTheme } from '@mui/material'
 import { Box, Typography } from "@mui/material";
@@ -20,28 +19,24 @@ const Team = () => {
   const theme = useTheme()
 
   const columns = [
-    { field: 'id', headerName: 'ID', align: "center", headerAlign: "center" },
-    { field: 'name', headerName: 'Name', align: "center", headerAlign: "center" },
-    { field: 'email', headerName: 'Email', align: "center", headerAlign: "center", flex: 1 },
-    { field: 'age', headerName: 'Age', align: "center", headerAlign: "center" },
+    { field: 'id', headerName: 'ID', align: "center", headerAlign: "center", width: 70 },
+    { field: 'name', headerName: 'Name', align: "center", headerAlign: "center", flex: 1 },
+    { field: 'email', headerName: 'Email', align: "center", headerAlign: "center", flex: 1.5 },
+    { field: 'age', headerName: 'Age', align: "center", headerAlign: "center", width: 90 },
     { field: 'phone', headerName: 'Phone', align: "center", headerAlign: "center", flex: 1 },
     {
-      field: 'access', headerName: 'Access', align: "center", headerAlign: "center", flex: 1,
+      field: 'access', headerName: 'Access', align: "center", headerAlign: "center", width: 120,
       renderCell: ({ row: { access } }) => {
         return (
           <Box sx={{
-            p: "5px",
-            mt: 1,
-            textAlign: "center",
-            width: "100px",
+            width: "100%",
             height: 35,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             borderRadius: 1,
-            gap: 0.5,
+            gap: 1,
             color: "#fff",
-            margin: "auto",
             backgroundColor: access === "Admin" ? theme.palette.primary.dark : access === "Manager" ? theme.palette.secondary.main : "#3da48a",
           }} >
 
@@ -56,18 +51,18 @@ const Team = () => {
     },
   ];
 
-
-
-
-
-
-
   return (
     <>
 
 
-      <Box sx={{ height: 600, width: '98%', mx: "auto" }}>
-        <DataGrid rows={rows} columns={columns} />
+      <Box sx={{ width: "95%", maxWidth: 1200, mx: "auto", mt: 3 }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+
+          sx={{
+            "& .MuiDataGrid-cell": { py: 1 }, "& .MuiDataGrid-columnHeader": { fontWeight: "bold" },
+          }} />
       </Box>
 
 
