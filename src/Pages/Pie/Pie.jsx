@@ -1,10 +1,9 @@
-import React from 'react'
+import PieChart from './PieChart'
 
 const Pie = () => {
+
   return (
-    <div>
-      Pie Page
-    </div>
+    <PieChart />
   )
 }
 
