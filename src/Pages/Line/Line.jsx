@@ -1,10 +1,12 @@
-import React from 'react'
+import LineChart from "./LineChart"
+
+
+
+
 
 const Line = () => {
   return (
-    <div>
-      Line Page
-    </div>
+    <LineChart />
   )
 }
 

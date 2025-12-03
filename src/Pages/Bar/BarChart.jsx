@@ -99,7 +99,7 @@ const BarChart = () => {
                                 },
                                 "text": {
                                     "fontSize": 11,
-                                    "fill": theme.palette.text.primary,
+                                    "fill": theme.palette.text.secondary,
                                     "outlineWidth": 0,
                                     "outlineColor": "#ffffff"
                                 }
