@@ -16,13 +16,6 @@ import Bar from "./Pages/Bar/Bar";
 import Pie from "./Pages/Pie/Pie";
 import Line from "./Pages/Line/Line";
 import Geography from "./Pages/Geography/Geography";
-// import BarApp from "./Components/BarApp/BarApp";
-
-
-
-
-
-
 
 
 function App() {
