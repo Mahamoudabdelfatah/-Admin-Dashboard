@@ -6,6 +6,8 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { formatDate } from "@fullcalendar/core";
 import { Paper, Stack } from "@mui/material";
 import { INITIAL_EVENTS, createEventId } from "./event-utils";
+import Header from '../../Components/Header/Header';
+
 
 const Calendar = () => {
   const [weekendsVisible, setWeekendsVisible] = useState(true);
@@ -54,7 +56,9 @@ const Calendar = () => {
 
 
       {/* Calendar */}
+
       <div className="demo-app-main" style={{ flex: 1 }}>
+        <Header title={"CALENDAR"} subTitle={"Managing the Team Members"} />
 
         <FullCalendar
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}

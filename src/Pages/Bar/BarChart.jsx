@@ -39,10 +39,10 @@ const data = [
     },
 ];
 
-const BarChart = () => {
+const BarChart = ({ isDashboard = false }) => {
     const theme = useTheme()
     return (
-        <Box sx={{ height: "75vh" }} >
+        <Box sx={{ height: isDashboard ? "300px" : "75vh" }} >
             <ResponsiveBar /* or Bar for fixed dimensions */
                 data={data}
                 keys={[
@@ -66,8 +66,8 @@ const BarChart = () => {
                         itemHeight: 16
                     }
                 ]}
-                axisBottom={{ legend: 'Year', legendOffset: 42 }}
-                axisLeft={{ legend: 'Salary / Month', legendOffset: -50 }}
+                axisBottom={{ legend: isDashboard ? null : 'Year', legendOffset: 42 }}
+                axisLeft={{ legend: isDashboard ? null : 'Salary / Month', legendOffset: -50 }}
                 margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
                 theme={
                     {

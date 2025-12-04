@@ -1,4 +1,7 @@
 import LineChart from "./LineChart"
+import Header from '../../Components/Header/Header';
+
+
 
 
 
@@ -6,7 +9,11 @@ import LineChart from "./LineChart"
 
 const Line = () => {
   return (
-    <LineChart />
+    <>
+      <Header title={"Line CHART"} subTitle={"Welcome to your line chart"} />
+
+      <LineChart />
+    </>
   )
 }
 

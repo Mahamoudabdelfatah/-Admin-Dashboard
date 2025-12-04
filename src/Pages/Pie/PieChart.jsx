@@ -1,6 +1,7 @@
 import { Box, useTheme } from '@mui/material';
 import { ResponsivePie } from '@nivo/pie'
 
+
 const data = [
     {
         id: "React",
@@ -35,14 +36,15 @@ const data = [
 ];
 
 
-const PieChart = () => {
+const PieChart = ({ isDashboard = false }) => {
     const theme = useTheme()
     return (
-        <Box sx={{ height: "75vh" }} >
+        <Box sx={{ height: isDashboard ? "200px" : "75vh" }} >
+
             <ResponsivePie /* or Pie for fixed dimensions */
                 data={data}
-                margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-                innerRadius={0.5}
+                margin={isDashboard ? { top: 10, right: 0, bottom: 10, left: 0 } : { top: 40, right: 80, bottom: 80, left: 80 }}
+                innerRadius={isDashboard ? 0.8 : 0.5}
                 padAngle={0.6}
                 cornerRadius={2}
                 activeOuterRadiusOffset={8}
@@ -51,16 +53,20 @@ const PieChart = () => {
                 arcLinkLabelsColor={{ from: 'color' }}
                 arcLabelsSkipAngle={10}
                 arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
-                legends={[
-                    {
-                        anchor: 'bottom',
-                        direction: 'row',
-                        translateY: 56,
-                        itemWidth: 100,
-                        itemHeight: 18,
-                        symbolShape: 'circle'
-                    }
-                ]}
+                enableArcLabels={isDashboard ? false : true}
+                enableArcLinkLabels={isDashboard ? false : true}
+                legends={
+                    isDashboard ? [] :
+                        [
+                            {
+                                anchor: 'bottom',
+                                direction: 'row',
+                                translateY: 56,
+                                itemWidth: 100,
+                                itemHeight: 18,
+                                symbolShape: 'circle'
+                            }
+                        ]}
                 theme={{
                     "text": {
                         "fontSize": 11,

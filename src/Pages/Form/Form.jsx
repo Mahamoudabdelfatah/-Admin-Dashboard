@@ -2,6 +2,8 @@ import { Alert, Box, Button, MenuItem, Stack, TextField } from "@mui/material"
 import { useForm } from "react-hook-form"
 import Snackbar from '@mui/material/Snackbar';
 import { useState } from "react";
+import Header from '../../Components/Header/Header';
+
 
 
 
@@ -55,6 +57,8 @@ const Form = () => {
       noValidate
       autoComplete="off"
     >
+      <Header title={"CREATE USER"} subTitle={"Create a New User Profile"} />
+
 
       <Stack sx={{ gap: 2 }} direction={"row"} >
         <TextField

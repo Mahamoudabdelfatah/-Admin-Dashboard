@@ -5,6 +5,8 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Stack } from '@mui/material';
+import Header from '../../Components/Header/Header';
+
 
 const FAQ = () => {
 
@@ -17,6 +19,8 @@ const FAQ = () => {
 
   return (
     <Stack direction={"column"} gap={2} >
+      <Header title={"FAQ"} subTitle={"Welcome to your faq"} />
+
       <Accordion defaultExpanded onChange={handleChange('panel1')}>
         <AccordionSummary
 

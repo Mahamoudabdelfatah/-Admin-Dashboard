@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { createTheme, ThemeProvider } from "@mui/material"
 import Layout from "./Components/Layout/Layout"
-import Home from "./Pages/Home/Home"
 import Notfound from "./Pages/Notfound/Notfound"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { getDesignTokens } from "./theme"
@@ -26,7 +25,6 @@ function App() {
   let routes = createBrowserRouter([
     {
       path: "/", element: <Layout setMode={setMode} />, children: [
-        // { index: true, element: <Home /> },
         { index: true, element: <Dashboard /> },
         { path: "team", element: <Team /> },
         { path: "contacts", element: <Contacts /> },

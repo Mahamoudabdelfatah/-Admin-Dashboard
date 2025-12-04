@@ -24,7 +24,7 @@ import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import { Link, useLocation } from 'react-router-dom';
-import { Avatar, Typography } from '@mui/material';
+import { Avatar, Tooltip, Typography } from '@mui/material';
 import { grey } from '@mui/material/colors';
 
 
@@ -133,54 +133,60 @@ const SideBar = ({ open, handleDrawerClose }) => {
         <List>
           {Array1.map((item) => (
             <ListItem key={item.path} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                component={Link}
-                to={item.path}
-                sx={[
-                  {
-                    minHeight: 48,
-                    px: 2.5,
-                    bgcolor: location.pathname === item.path ? theme.palette.mode === "dark" ? grey[900] : grey[300] : null
-                  },
-                  open
-                    ? {
-                      justifyContent: 'initial',
-                    }
-                    : {
-                      justifyContent: 'center',
-                    },
-                ]}
-              >
-                <ListItemIcon
+
+              <Tooltip title={open ? null : item.text} placement="left">
+
+                <ListItemButton
+                  component={Link}
+                  to={item.path}
                   sx={[
                     {
-                      minWidth: 0,
-                      justifyContent: 'center',
+                      minHeight: 48,
+                      px: 2.5,
+                      bgcolor: location.pathname === item.path ? theme.palette.mode === "dark" ? grey[900] : grey[300] : null
                     },
                     open
                       ? {
-                        mr: 3,
+                        justifyContent: 'initial',
                       }
                       : {
-                        mr: 'auto',
+                        justifyContent: 'center',
                       },
                   ]}
                 >
-                  {item.icon}
-                </ListItemIcon>
-                <ListItemText
-                  primary={item.text}
-                  sx={[
-                    open
-                      ? {
-                        opacity: 1,
-                      }
-                      : {
-                        opacity: 0,
+                  <ListItemIcon
+                    sx={[
+                      {
+                        minWidth: 0,
+                        justifyContent: 'center',
                       },
-                  ]}
-                />
-              </ListItemButton>
+                      open
+                        ? {
+                          mr: 3,
+                        }
+                        : {
+                          mr: 'auto',
+                        },
+                    ]}
+                  >
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={item.text}
+                    sx={[
+                      open
+                        ? {
+                          opacity: 1,
+                        }
+                        : {
+                          opacity: 0,
+                        },
+                    ]}
+                  />
+                </ListItemButton>
+
+              </Tooltip>
+
             </ListItem>
           ))}
         </List>
@@ -194,54 +200,58 @@ const SideBar = ({ open, handleDrawerClose }) => {
         <List>
           {Array2.map((item) => (
             <ListItem key={item.path} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                component={Link}
-                to={item.path}
-                sx={[
-                  {
-                    minHeight: 48,
-                    px: 2.5,
-                    bgcolor: location.pathname === item.path ? theme.palette.mode === "dark" ? grey[900] : grey[300] : null
-                  },
-                  open
-                    ? {
-                      justifyContent: 'initial',
-                    }
-                    : {
-                      justifyContent: 'center',
-                    },
-                ]}
-              >
-                <ListItemIcon
+
+              <Tooltip title={open ? null : item.text} placement="left">
+
+                <ListItemButton
+                  component={Link}
+                  to={item.path}
                   sx={[
                     {
-                      minWidth: 0,
-                      justifyContent: 'center',
+                      minHeight: 48,
+                      px: 2.5,
+                      bgcolor: location.pathname === item.path ? theme.palette.mode === "dark" ? grey[900] : grey[300] : null
                     },
                     open
                       ? {
-                        mr: 3,
+                        justifyContent: 'initial',
                       }
                       : {
-                        mr: 'auto',
+                        justifyContent: 'center',
                       },
                   ]}
                 >
-                  {item.icon}
-                </ListItemIcon>
-                <ListItemText
-                  primary={item.text}
-                  sx={[
-                    open
-                      ? {
-                        opacity: 1,
-                      }
-                      : {
-                        opacity: 0,
+                  <ListItemIcon
+                    sx={[
+                      {
+                        minWidth: 0,
+                        justifyContent: 'center',
                       },
-                  ]}
-                />
-              </ListItemButton>
+                      open
+                        ? {
+                          mr: 3,
+                        }
+                        : {
+                          mr: 'auto',
+                        },
+                    ]}
+                  >
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={item.text}
+                    sx={[
+                      open
+                        ? {
+                          opacity: 1,
+                        }
+                        : {
+                          opacity: 0,
+                        },
+                    ]}
+                  />
+                </ListItemButton>
+              </Tooltip>
             </ListItem>
           ))}
         </List>
@@ -251,6 +261,9 @@ const SideBar = ({ open, handleDrawerClose }) => {
         <List>
           {Array3.map((item) => (
             <ListItem key={item.path} disablePadding sx={{ display: 'block' }}>
+
+              <Tooltip title={open ? null : item.text} placement="left">
+
               <ListItemButton
                 component={Link}
                 to={item.path}
@@ -299,6 +312,7 @@ const SideBar = ({ open, handleDrawerClose }) => {
                   ]}
                 />
               </ListItemButton>
+              </Tooltip>
             </ListItem>
           ))}
         </List>

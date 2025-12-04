@@ -7,6 +7,7 @@ import {
   LockOpenOutlined,
   SecurityOutlined,
 } from "@mui/icons-material";
+import Header from '../../Components/Header/Header';
 
 
 
@@ -54,8 +55,8 @@ const Team = () => {
   return (
     <>
 
-
       <Box sx={{ width: "95%", maxWidth: 1200, mx: "auto", mt: 3 }}>
+        <Header title={"TEAM"} subTitle={"Managing the Team Members"} />
         <DataGrid
           rows={rows}
           columns={columns}

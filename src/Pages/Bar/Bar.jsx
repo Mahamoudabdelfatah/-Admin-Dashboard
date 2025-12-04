@@ -1,12 +1,17 @@
 
 import BarChart from './BarChart';
+import Header from '../../Components/Header/Header';
+
 
 
 
 const Bar = () => {
 
   return (
-    <BarChart />
+    <>
+      <Header title={"BAR CHART"} subTitle={"Welcome to your bar chart"} />
+      <BarChart />
+    </>
   )
 }
 

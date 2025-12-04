@@ -3,10 +3,12 @@ import { ResponsiveChoropleth } from '@nivo/geo'
 import { data } from './data'
 import { geo } from "./world_countries"
 
-const GeographyDes = () => {
-    const theme = useTheme()
+
+const GeographyDes = ({ isDashboard = false }) => {
+  const theme = useTheme()
   return (
-      <Box sx={{ height: "75vh", border: `1px solid ${theme.palette.text.primary}`, borderRadius: "5px" }} >
+    <Box sx={{ height: isDashboard ? "350px" : "75vh", borderRadius: "5px" }} >
+
       <ResponsiveChoropleth /* or Choropleth for fixed dimensions */
         data={data}
         features={geo.features}
@@ -20,23 +22,25 @@ const GeographyDes = () => {
         graticuleLineColor={false}
         borderWidth={0.5}
         borderColor="#152538"
-        projectionScale={130}
-        legends={[
-          {
-            anchor: 'bottom-left',
-            direction: 'column',
-            justify: true,
-            translateX: 20,
-            translateY: -30,
-            itemsSpacing: 0,
-            itemWidth: 94,
-            itemHeight: 18,
-            itemDirection: 'left-to-right',
-            itemTextColor: theme.palette.text.primary,
-            itemOpacity: 0.85,
-            symbolSize: 18
-          }
-        ]}
+        projectionScale={isDashboard ? 70 : 150}
+        legends={
+          isDashboard ? [] :
+            [
+              {
+                anchor: 'bottom-left',
+                direction: 'column',
+                justify: true,
+                translateX: 20,
+                translateY: -30,
+                itemsSpacing: 0,
+                itemWidth: 94,
+                itemHeight: 18,
+                itemDirection: 'left-to-right',
+                itemTextColor: theme.palette.text.primary,
+                itemOpacity: 0.85,
+                symbolSize: 18
+              }
+            ]}
         theme={{
           // "background": "#ffffff",
           "text": {

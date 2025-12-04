@@ -1,10 +1,16 @@
 import GeographyDes from "./GeographyDes"
+import Header from '../../Components/Header/Header';
+
 
 
 const Geography = () => {
 
   return (
-    <GeographyDes />
+    <>
+
+      <Header title={"GEOGRAPHY CHART"} subTitle={"Welcome to your geography chart"} />
+      <GeographyDes />
+    </>
 
   )
 }
